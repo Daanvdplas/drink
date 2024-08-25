@@ -45,9 +45,11 @@ ink_sandbox = { version = "5.0.0" }
 
 # Substrate dependencies
 
-frame-support = { version = "30.0.0"}
+frame-support = { version = "30.0.0" }
 frame-system = { version = "30.0.0" }
+pallet-contracts = { version = "29.0.0" }
 sp-runtime-interface = { version = "26.0.0" }
+sp-externalities = { version = "0.27.0" }
 
 # Local dependencies
 

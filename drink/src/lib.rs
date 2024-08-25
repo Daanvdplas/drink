@@ -12,15 +12,23 @@ pub mod session;
 pub use drink_test_macro::{contract_bundle_provider, test};
 pub use errors::Error;
 pub use frame_support;
-pub use ink_sandbox::{
-    api as sandbox_api, create_sandbox, pallet_balances, pallet_contracts, pallet_timestamp,
-    sp_externalities, AccountId32, DispatchError, Sandbox, Ss58Codec, Weight,
-};
+// pub use ink_sandbox::{
+//     api as sandbox_api, create_sandbox, pallet_balances, pallet_contracts, pallet_timestamp,
+//     sp_externalities, AccountId32, DispatchError, Sandbox, Ss58Codec, Weight,
+// };
 #[cfg(feature = "session")]
 pub use session::mock::{mock_message, ContractMock, MessageMock, MockedCallResult, Selector};
 
 /// Main result type for the drink crate.
 pub type DrinkResult<T> = std::result::Result<T, Error>;
+
+pub mod types {
+    use frame_system::EventRecord;
+
+    pub type AccountIdFor<R> = <R as frame_system::Config>::AccountId;
+    pub type EventRecordOf<R> =
+        EventRecord<<R as frame_system::Config>::RuntimeEvent, <R as frame_system::Config>::Hash>;
+}
 
 /// Minimal Sandbox runtime used for testing contracts with drink!.
 #[allow(missing_docs)]

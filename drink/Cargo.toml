@@ -16,6 +16,8 @@ frame-support = { workspace = true }
 frame-system = { workspace = true }
 parity-scale-codec = { workspace = true }
 parity-scale-codec-derive = { workspace = true }
+pallet-contracts.workspace = true
+sp-externalities.workspace = true
 sp-runtime-interface = { workspace = true }
 ink_sandbox = { workspace = true }
 

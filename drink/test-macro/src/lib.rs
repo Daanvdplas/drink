@@ -78,6 +78,7 @@ fn test_internal(attr: TokenStream2, item: TokenStream2) -> SynResult<TokenStrea
     let item_fn = syn::parse2::<ItemFn>(item)?;
     let macro_args = TestAttributes::from_list(&NestedMeta::parse_meta_list(attr)?)?;
 
+    // TODO: why do we build the contracts again?
     build_contracts();
 
     let fn_vis = item_fn.vis;

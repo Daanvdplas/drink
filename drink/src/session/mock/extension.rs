@@ -4,10 +4,10 @@ use parity_scale_codec::{Decode, Encode};
 
 use crate::{
     errors::MessageResult,
-    pallet_contracts::{chain_extension::ReturnFlags, debug::ExecResult, ExecReturnValue},
     pallet_contracts_debugging::InterceptingExtT,
     session::mock::{MockRegistry, Selector},
 };
+use pallet_contracts::{chain_extension::ReturnFlags, debug::ExecResult, ExecReturnValue};
 
 /// Runtime extension enabling contract call interception.
 pub(crate) struct MockingExtension<AccountId: Ord> {

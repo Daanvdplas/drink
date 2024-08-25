@@ -1,11 +1,7 @@
-use ink_sandbox::AccountIdFor;
-
-use crate::{
-    pallet_contracts::{
-        debug::{CallSpan, ExportedFunction},
-        Config, ExecReturnValue, Tracing,
-    },
-    pallet_contracts_debugging::DrinkDebug,
+use crate::{pallet_contracts_debugging::DrinkDebug, types::AccountIdFor};
+use pallet_contracts::{
+    debug::{CallSpan, ExportedFunction},
+    Config, ExecReturnValue, Tracing,
 };
 
 impl<R: Config> Tracing<R> for DrinkDebug {

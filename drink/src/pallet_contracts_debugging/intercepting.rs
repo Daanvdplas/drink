@@ -1,12 +1,10 @@
 use ink_sandbox::AccountIdFor;
 use parity_scale_codec::{Decode, Encode};
 
-use crate::{
-    pallet_contracts::{
-        debug::{CallInterceptor, ExecResult, ExportedFunction},
-        Config,
-    },
-    pallet_contracts_debugging::{runtime::contract_call_debugger, DrinkDebug},
+use crate::pallet_contracts_debugging::{runtime::contract_call_debugger, DrinkDebug};
+use pallet_contracts::{
+    debug::{CallInterceptor, ExecResult, ExportedFunction},
+    Config,
 };
 
 impl<R: Config> CallInterceptor<R> for DrinkDebug {

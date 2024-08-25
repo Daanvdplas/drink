@@ -1,12 +1,13 @@
 //! Mocking API for the sandbox.
-use ink_sandbox::{api::prelude::*, AccountIdFor, Sandbox};
+use ink_sandbox::{api::prelude::*, Sandbox};
 
 use super::Session;
 use crate::{
-    pallet_contracts::Config,
     session::mock::ContractMock,
+    types::AccountIdFor,
     // DEFAULT_GAS_LIMIT,
 };
+use pallet_contracts::Config;
 
 /// Interface for basic mocking operations.
 pub trait MockingApi<R: Config> {
